@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function declaration
+        //pemanggilan fungsi bisa didahulukan sebelum didefinisikan
+        //function ini sering dipakai berulang di berbagai tempat
+        sapa ()
+
+        function sapa(){
+            let nama = "Zidan"
+            console.log ("Selamat pagi master", nama,"desuwa~")
+        }
+        //fungsi expression
+        //pemanggilan fungsi dengan memanggil variabel, karena fungsi disimpan dalam variabel
+        //harus didefinisikan dahulu sebelum di panggil
+        let hitoeng = function(a,b) {
+            return a+b;
+        }
+        console.log(hitoeng(6,6));
+    </script>
+</body>
+</html>

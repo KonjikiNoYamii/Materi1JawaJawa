@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Operator array dalam kotak
+        function ngitoeng() {
+            let a = 10;
+            let b = 5;
+            let c = 8;
+            console.log (a + b)
+            console.log (a - c)
+            console.log (b * c)
+        }
+        ngitoeng()
+
+        //operator penugasan dalam kotak
+        function penugasan() {
+            let angka= 100;
+            angka += 50
+            console.log (angka) 
+        } 
+        penugasan()
+
+        //operator perbandingan
+        // == : sama dengan (tidak peduli tipe)
+        // === : sama dengan (harus sama tipe juga)
+        // != : tidak sama dengan
+        // > : lebih besar
+        // < : lebih kecil
+        let umur = 18
+        console.log(umur > 17); //bernilai true karena benar (nilai variabel lebih besar dibanding 17)
+        console.log(umur === "18"); //bernilai false karena berbeda tipe data
+        //dalam kotak
+        function cekUmur() {
+            let elf = 1000;
+            let manusia = 10;
+            console.log("cek umur", elf > manusia)
+        }
+        cekUmur()
+        //operator logika
+        //&& : AND (harus dua-duanya benar)
+        //|| : OR (cukup salah satu benar)
+        //! : NOT (kebalikan
+        let pahala = true
+        let dosa = false
+        console.log(pahala && dosa);
+        console.log(pahala || dosa);
+        console.log(pahala && pahala);
+    </script>
+</body>
+</html>
