@@ -65,7 +65,6 @@ console.count(istriFirst);
 
 //group
 //grouping
-
 console.group("Info Mahasiswa");
 console.log("Nama: Yui");
 console.log("Umur: 18");
