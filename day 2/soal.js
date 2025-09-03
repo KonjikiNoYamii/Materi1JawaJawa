@@ -187,13 +187,14 @@ function cekSuhu(suhu) {
         console.log("Suhu panas");
         
     }
-    else if(suhu >= 20 && suhu <= 30) {
+    if(suhu >= 20 && suhu <= 30) {
         console.log("Suhu normal");
         
     }
-    else {
+    if(suhu < 20) {
         console.log("Suhu dingin");
         
     }
+
 }
 cekSuhu(suhuCuaca);
