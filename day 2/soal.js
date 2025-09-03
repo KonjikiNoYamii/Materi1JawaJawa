@@ -47,10 +47,13 @@ console.log(totalPembelian *= 0.9);
 //level 2
 
 //soal 1
-let umurBudi = 25
+let umurBudi = 30
 let umurAndi = 30
 if(umurBudi <= umurAndi) {
     document.getElementById('cekUmur').innerHTML = "Umur Budi lebih muda daripada Andi"
+}
+else{
+    document.getElementById('cekUmur').innerHTML = "Umur Budi lebih tua daripada Andi"
 }
 
 //soal 2
@@ -116,6 +119,9 @@ function ngecekUmur(umur) {
     if (umur > 17) {
         console.log("Anda sudah dewasa")
     }
+    else {
+        console.log("Anda belum dewasa")
+    }
 }
 ngecekUmur(umurDewasa)
 
@@ -124,6 +130,9 @@ let cekNilaiJawaban = 100
 function ngecekNilai(nilai) {
     if (nilai > 90) {
         console.log("Nilai anda A")
+    }
+    else {
+        console.log("Nilai anda dibawah A")
     }
 }
 ngecekNilai(cekNilaiJawaban)
@@ -172,21 +181,19 @@ function cekKelayakan(umur, punyaSim) {
 cekKelayakan(umurLayak, sim);
 
 //soal 5
-let suhuCuaca = 30
+let suhuCuaca = 21
 function cekSuhu(suhu) {
     if(suhu > 30) {
         console.log("Suhu panas");
         
     }
-    if(suhu >= 20 && suhu <= 30) {
+    else if(suhu >= 20 && suhu <= 30) {
         console.log("Suhu normal");
         
     }
-    if(suhu < 20) {
+    else {
         console.log("Suhu dingin");
         
     }
-    
-
 }
 cekSuhu(suhuCuaca);
