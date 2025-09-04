@@ -215,14 +215,12 @@ console.log(semangat);
 }
 
 //soal 15
-for(let i = 0; i < N; i++){
+for (let i = 1; i <= N; i++) {
     let bintang = "";
-
-for(let j = 1; j <= i; j++ ){
-    bintang = "*";
+    for (let j = 1; j <= i; j++) {
+        bintang += "*"; 
+    }
     console.log(bintang);
-    
-}
 }
 
 //soal 16
