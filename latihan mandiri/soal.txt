@@ -1,0 +1,55 @@
+2. Fungsi: hitungNilai(nilaiArr)
+
+Input: [80, 70, 90, 100, 60]
+
+Output: "Rata-rata: 80. Jumlah Lulus: 3, Tidak Lulus: 2."
+
+Lulus jika nilai >= 75.
+
+3. Fungsi: hitungTransaksi(transaksiArr)
+
+Input: ["Debit", "Kredit", "Debit", "Debit"]
+
+Output: "Debit: 3 kali, Kredit: 1 kali. %Debit: 75%."
+
+4. Fungsi: hitungHafalan(hafalanArr)
+
+Input: ["1 juz", "2 juz", "1 juz", "3 juz", "2 juz"]
+
+Output: "1 juz: 2 kali, 2 juz: 2 kali, 3 juz: 1 kali."
+
+5. Fungsi: hitungCuaca(cuacaArr)
+
+Input: ["Hujan","Cerah","Cerah","Hujan","Mendung"]
+
+Output: "Hujan: 2 kali, Cerah: 2 kali, Mendung: 1 kali."
+
+6. Fungsi: hitungProduk(produkArr)
+
+Input: ["Baju","Celana","Baju","Sepatu","Baju"]
+
+Output: "Baju: 3 kali, Celana: 1 kali, Sepatu: 1 kali."
+
+7. Fungsi: hitungHari(hariArr)
+
+Input: ["Senin","Selasa","Senin","Rabu"]
+
+Output: "Senin: 2 kali, Selasa: 1 kali, Rabu: 1 kali."
+
+8. Fungsi: hitungSuhu(suhuArr)
+
+Input: [30, 32, 29, 35, 33]
+
+Output: "Suhu tertinggi: 35, Suhu terendah: 29, Rata-rata: 31.8."
+
+9. Fungsi: hitungKehadiranSantri(santriArr)
+
+Input: ["Abu","Ali","Umar","Abu","Ali"]
+
+Output: "Abu: 2 kali, Ali: 2 kali, Umar: 1 kali."
+
+10. Fungsi: hitungVote(voteArr)
+
+Input: ["A","B","A","C","A","B"]
+
+Output: "A: 3 suara, B: 2 suara, C: 1 suara. Pemenang: A."
