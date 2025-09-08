@@ -236,53 +236,69 @@ let pembelianMakanan = [15,10,20]
 // console.log(hasil);
 
 // soal 20
-let service = ["berat","sedang","ringan"]
-let waktu = ""
-let hasil =[]
-let komisi = ""
-for(let i = 0; i < service.length; i++){
-    switch (true) {
-        case service[i] === "berat":
-            waktu = "1 bulan"
-            komisi = "20%"
-            break;
-        case service[i] === "sedang":
-            waktu = "2 minggu"
-            komisi = "15%"    
-            break;
-        case service[i] === "ringan":
-            waktu = "1 minggu"
-            komisi = "10%"    
-        default:
-            break;
-    } hasil.push(`service ${service[i]} garansi ${waktu} dengan komisi ${komisi}`)
-}
-console.log(hasil);
+// let service = ["berat","sedang","ringan"]
+// let waktu = ""
+// let hasil =[]
+// let komisi = ""
+// for(let i = 0; i < service.length; i++){
+//     switch (true) {
+//         case service[i] === "berat":
+//             waktu = "1 bulan"
+//             komisi = "20%"
+//             break;
+//         case service[i] === "sedang":
+//             waktu = "2 minggu"
+//             komisi = "15%"    
+//             break;
+//         case service[i] === "ringan":
+//             waktu = "1 minggu"
+//             komisi = "10%"    
+//         default:
+//             break;
+//     } hasil.push(`service ${service[i]} garansi ${waktu} dengan komisi ${komisi}`)
+// }
+// console.log(hasil);
 
-// soal 21
-let paketKursus = [
-    {nama: "Basic",harga: 500000, pertemuan: "4 pertemuan"},
-    {nama: "Standart",harga: 800000, pertemuan: "8 pertemuan"},
-    {nama: "Premium",harga: 1200000, pertemuan: "12 pertemuan"}
-];
+// // soal 21
+// let paketKursus = [
+//     {nama: "Basic",harga: 500000, pertemuan: "4 pertemuan"},
+//     {nama: "Standart",harga: 800000, pertemuan: "8 pertemuan"},
+//     {nama: "Premium",harga: 1200000, pertemuan: "12 pertemuan"}
+// ];
 
 // soal 22
-let cicilan = [2,3,4]
-let cicilan1 = 0
-let cicilan2 = 0
-let cicilan3
-for(let i = 0;i < cicilan.length; i++){
-    if(paketKursus[i].harga == 500000 ){
-    cicilan1 = paketKursus[i].harga *= cicilan[i]
-    }
-    else if(paketKursus[i].harga == 800000 ){
-    cicilan2 = paketKursus[i].harga *= cicilan[i]
-    }
-    else if(paketKursus[i].harga == 1200000 ){
-    cicilan3 = paketKursus[i].harga *= cicilan[i]
-    }
-}   
-    console.log(`basic 2x: ${cicilan1} standart: 3x ${cicilan2} premium: 4x ${cicilan3}`);
+// let cicilan = [2,3,4]
+// let cicilan1 = 0
+// let cicilan2 = 0
+// let cicilan3
+// for(let i = 0;i < cicilan.length; i++){
+//     if(paketKursus[i].harga == 500000 ){
+//     cicilan1 = paketKursus[i].harga *= cicilan[i]
+//     }
+//     else if(paketKursus[i].harga == 800000 ){
+//     cicilan2 = paketKursus[i].harga *= cicilan[i]
+//     }
+//     else if(paketKursus[i].harga == 1200000 ){
+//     cicilan3 = paketKursus[i].harga *= cicilan[i]
+//     }
+// }   
+//     console.log(`basic 2x: ${cicilan1} standart: 3x ${cicilan2} premium: 4x ${cicilan3}`);
 
-// soal 23
+// // soal 23
+// let ruangA = 20
+// let ruangB = 15
+// let ruangC = 25
+// let ruangD = 10
+// let ruangE = 30
 
+// let totalSiswa = ruangA + ruangB + ruangC + ruangD + ruangE
+// let pembagianSiswa = totalSiswa / 5
+// console.log(`total siswa tiap kelas ${pembagianSiswa} siswa tiap kelas`);
+
+// // soal 24
+// for(let i = 1; i <= 100; i++){
+//     console.log(`siswa ke-${i}`);
+    
+// } 
+
+// soal 25
