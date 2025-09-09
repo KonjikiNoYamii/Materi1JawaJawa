@@ -187,3 +187,5 @@ function hitungCuaca(cuacaArr) {
 console.log(hitungCuaca(["Hujan","Cerah","Cerah","Hujan","Mendung"]));
 console.log("===========================================================================");
 
+
+

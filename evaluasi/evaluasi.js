@@ -1,6 +1,6 @@
 // soal 1
-let penjualanMakanan = [8000,12000,3000]
-let pembelianMakanan = [15,10,20]
+// let penjualanMakanan = [8000,12000,3000]
+// let pembelianMakanan = [15,10,20]
 // function buSriBingung(penjualan, pembelian) {
 //     let tumbal = 0
 //     for(let i = 0; i < penjualan.length ; i++){
@@ -235,7 +235,7 @@ let pembelianMakanan = [15,10,20]
 // }
 // console.log(hasil);
 
-// soal 20
+//soal 20
 // let service = ["berat","sedang","ringan"]
 // let waktu = ""
 // let hasil =[]
@@ -295,10 +295,10 @@ let pembelianMakanan = [15,10,20]
 // let pembagianSiswa = totalSiswa / 5
 // console.log(`total siswa tiap kelas ${pembagianSiswa} siswa tiap kelas`);
 
-// // soal 24
+// soal 24
 // for(let i = 1; i <= 100; i++){
 //     console.log(`siswa ke-${i}`);
     
-// } 
+//  } 
 
 // soal 25
