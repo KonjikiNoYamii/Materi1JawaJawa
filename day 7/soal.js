@@ -9,8 +9,7 @@
 // let kosong = []
 // let hobi = ["Nyapu","Ngepel","Beres-beres"]
 // for (let i = 0; i < hobi.length; i++) {
-//     kosong.push(hobi[i]);
-    
+//     kosong.push(hobi[i]); 
 // }
 // console.log(hobi);
 
@@ -135,23 +134,19 @@ let data = [1,2,3,4,5,6,7,8,9,10]
 let tumbalKeganjilan =[]
 let tumbalKekalian = []
 data.filter(function (number) {
-    if (number % 2 == 1) {
-        tumbalKeganjilan.push(number)
-        // console.log(tumbalKeganjilan);   
-    }
+    if(number % 2 == 1){ 
+    tumbalKeganjilan.push(number)
+    // console.log(tumbalKeganjilan);
+    }   
 })
-data.map(function (num) { 
-    num = num * 2;
+tumbalKeganjilan.map(function (num) { 
+    if(num = num * 2){
     tumbalKekalian.push(num) 
     // console.log(tumbalKekalian);
-    
-})
-let hasil = tumbalKeganjilan.reduce(function (sum, num) {
-    return sum + num
-    // console.log(hasil);
+    }  
 })
 let hasil1 = tumbalKekalian.reduce(function (sum,num) {
     return sum + num
 })
-let total = hasil1 += hasil
-console.log(total);
+console.log(hasil1);
+
