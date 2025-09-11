@@ -259,12 +259,13 @@
 // }
 // console.log(hasil);
 
-// // soal 21
-// let paketKursus = [
-//     {nama: "Basic",harga: 500000, pertemuan: "4 pertemuan"},
-//     {nama: "Standart",harga: 800000, pertemuan: "8 pertemuan"},
-//     {nama: "Premium",harga: 1200000, pertemuan: "12 pertemuan"}
-// ];
+// soal 21
+let paketKursus = [
+    {nama: "Basic",harga: 500000, pertemuan: "4 pertemuan"},
+    {nama: "Standart",harga: 800000, pertemuan: "8 pertemuan"},
+    {nama: "Premium",harga: 1200000, pertemuan: "12 pertemuan"}
+];
+console.log(paketKursus);
 
 // soal 22
 // let cicilan = [2,3,4]
