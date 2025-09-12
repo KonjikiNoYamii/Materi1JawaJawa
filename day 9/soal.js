@@ -90,24 +90,26 @@ console.log(`==================================`);
 let sistemPerpustakaan = {
   tumbal: [],
   tambahBuku: function (judul, pengarang) {
-    let bukuBuku = { judul: judul, pengarang: pengarang };
-    sistemPerpustakaan.tumbal.push(bukuBuku);
+    let bukuBuku = { judul3: judul, pengarang: pengarang };
+    this.tumbal.push(bukuBuku);
   },
   cariBuku: function (judul1) {
-    let bukuDitemukan = sistemPerpustakaan.tumbal.find(
-      (item) => item.judul === judul1
-    );
-    if (bukuDitemukan) {
-      return `Buku ${bukuDitemukan.judul} dengan nama pengarang ${bukuDitemukan.pengarang}`;
+    let bukuDitemukan = this.tumbal.find(
+      function (item) {
+        return item.judul3 === judul1
+  });
+      if (bukuDitemukan) {
+        return `Buku ${bukuDitemukan.judul3} dengan nama pengarang ${bukuDitemukan.pengarang}`;
+      }
     }
-  },
+  ,
   hitungTotalBuku: function () {
-    return `Total buku saat ini: ${sistemPerpustakaan.tumbal.length}`;
+    return `Total buku saat ini: ${this.tumbal.length}`;
   },
   tampilkanInfo: function () {
     console.log("Daftar Buku di Perpustakaan:");
-    sistemPerpustakaan.tumbal.forEach((buku, i) => {
-      console.log(`${i + 1}. "${buku.judul}" oleh ${buku.pengarang}`);
+    this.tumbal.forEach((buku, i) => {
+      console.log(`${i + 1}. "${buku.judul3}" oleh ${buku.pengarang}`);
     });
   },
 };
@@ -118,25 +120,25 @@ console.log(sistemPerpustakaan.cariBuku("Laskar Pelangi"));
 console.log(sistemPerpustakaan.hitungTotalBuku());
 sistemPerpustakaan.tampilkanInfo();
 
-console.log(`==================================`);
-console.log(`INFORMASI PERPUSTAKAAN DIGITAL`);
-console.log(`==================================`);
-console.log(`Nama Perpustakaan: ${PerpustakaanDigitalKota.nama}`);
-console.log(`Alamat: ${PerpustakaanDigitalKota.alamat}`);
-console.log(`jumlahBuku: ${PerpustakaanDigitalKota.jumlahBuku}`);
-console.log(`==================================`);
-console.log(`FASILITAS TERSEDIA`);
-console.log(`==================================`);
-console.log(PerpustakaanDigitalKota.fasilitasPerpustakaan);
-console.log(`==================================`);
-console.log(`KOLEKSI BUKU TERBARU`);
-console.log(`==================================`);
-sistemPerpustakaan.tampilkanInfo();
-console.log(`==================================`);
-console.log(daftarPengunjung);
-console.log(`==================================`);
-let statusPerpustakaan = {
-  "Status Sistem": "✅ Online",
-  "Terakhir diupdate": "11 September 2025",
-};
-console.log(statusPerpustakaan);
+// console.log(`==================================`);
+// console.log(`INFORMASI PERPUSTAKAAN DIGITAL`);
+// console.log(`==================================`);
+// console.log(`Nama Perpustakaan: ${PerpustakaanDigitalKota.nama}`);
+// console.log(`Alamat: ${PerpustakaanDigitalKota.alamat}`);
+// console.log(`jumlahBuku: ${PerpustakaanDigitalKota.jumlahBuku}`);
+// console.log(`==================================`);
+// console.log(`FASILITAS TERSEDIA`);
+// console.log(`==================================`);
+// console.log(PerpustakaanDigitalKota.fasilitasPerpustakaan);
+// console.log(`==================================`);
+// console.log(`KOLEKSI BUKU TERBARU`);
+// console.log(`==================================`);
+// sistemPerpustakaan.tampilkanInfo();
+// console.log(`==================================`);
+// console.log(daftarPengunjung);
+// console.log(`==================================`);
+// let statusPerpustakaan = {
+//   "Status Sistem": "✅ Online",
+//   "Terakhir diupdate": "11 September 2025",
+// };
+// console.log(statusPerpustakaan);
