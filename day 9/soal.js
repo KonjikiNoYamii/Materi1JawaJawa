@@ -67,18 +67,15 @@ console.log(`==================================`);
 
 // soal 15
 for (let a in perpustakaan) {
-    console.log(perpustakaan[a]);
-    
+  console.log(perpustakaan[a]);
 }
 console.log(`==================================`);
 
 // soal 16
-for(let a in PerpustakaanDigitalKota){
-    if (typeof PerpustakaanDigitalKota[a]) {
-        console.log(PerpustakaanDigitalKota[a]);
-        
-    }
-    
+for (let a in PerpustakaanDigitalKota) {
+  if (typeof PerpustakaanDigitalKota[a]) {
+    console.log(PerpustakaanDigitalKota[a]);
+  }
 }
 console.log(`==================================`);
 
@@ -92,19 +89,19 @@ console.log(`==================================`);
 // soal 18
 let sistemPerpustakaan = {
   tumbal: [],
-  tambahBuku:function(judul,pengarang){
-    let bukuBuku = {judul:judul, pengarang:pengarang};
-    sistemPerpustakaan.tumbal.push(bukuBuku)
+  tambahBuku: function (judul, pengarang) {
+    let bukuBuku = { judul: judul, pengarang: pengarang };
+    sistemPerpustakaan.tumbal.push(bukuBuku);
   },
-  cariBuku:function(judul1) {
-    let bukuDitemukan = sistemPerpustakaan.tumbal.find(item => item.judul === judul1);
+  cariBuku: function (judul1) {
+    let bukuDitemukan = sistemPerpustakaan.tumbal.find(
+      (item) => item.judul === judul1
+    );
     if (bukuDitemukan) {
-      return `Buku ${bukuDitemukan.judul} dengan nama pengarang ${bukuDitemukan.pengarang}`
+      return `Buku ${bukuDitemukan.judul} dengan nama pengarang ${bukuDitemukan.pengarang}`;
     }
-        
-        
-      },
-    hitungTotalBuku: function () {
+  },
+  hitungTotalBuku: function () {
     return `Total buku saat ini: ${sistemPerpustakaan.tumbal.length}`;
   },
   tampilkanInfo: function () {
@@ -112,8 +109,7 @@ let sistemPerpustakaan = {
     sistemPerpustakaan.tumbal.forEach((buku, i) => {
       console.log(`${i + 1}. "${buku.judul}" oleh ${buku.pengarang}`);
     });
-  }
-  
+  },
 };
 sistemPerpustakaan.tambahBuku("Laskar Pelangi", "Andrea Hirata");
 sistemPerpustakaan.tambahBuku("Bumi Manusia", "Pramoedya Ananta Toer");
@@ -121,8 +117,6 @@ sistemPerpustakaan.tambahBuku("Bumi Manusia", "Pramoedya Ananta Toer");
 console.log(sistemPerpustakaan.cariBuku("Laskar Pelangi"));
 console.log(sistemPerpustakaan.hitungTotalBuku());
 sistemPerpustakaan.tampilkanInfo();
-
-
 
 console.log(`==================================`);
 console.log(`INFORMASI PERPUSTAKAAN DIGITAL`);
@@ -137,13 +131,12 @@ console.log(PerpustakaanDigitalKota.fasilitasPerpustakaan);
 console.log(`==================================`);
 console.log(`KOLEKSI BUKU TERBARU`);
 console.log(`==================================`);
-sistemPerpustakaan.tampilkanInfo()
+sistemPerpustakaan.tampilkanInfo();
 console.log(`==================================`);
 console.log(daftarPengunjung);
 console.log(`==================================`);
-let statusPerpustakaan ={
-  "Status Sistem":"✅ Online",
-  "Terakhir diupdate": "11 September 2025"
-}
+let statusPerpustakaan = {
+  "Status Sistem": "✅ Online",
+  "Terakhir diupdate": "11 September 2025",
+};
 console.log(statusPerpustakaan);
-
