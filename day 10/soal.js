@@ -24,17 +24,18 @@ const menuMakanan = {
       console.log("Tidak ada makanan");
       return;
     }
+
     this.data.forEach((item, idx) => {
       const { id, nama, harga, tersedia } = item;
-      const status = tersedia ? tersedia : habis;
-      console.log(`${idx + 1}. [${id}] ${nama} - ${harga} ✅ tersediaa`);
+      const status = tersedia ? "tersedia" : "habis";
+      console.log(`${idx + 1}. [${id}] ${nama} - ${harga} ✅ ${status}`);
     });
   },
   editHarga: function (updateData) {
     const index = this.data.findIndex((item) => item.id === updateData.id);
 
     if (index === -1) {
-      console.log(`menu makanan ${id} tidak ada`);
+      console.log(`menu makanan ${updateData.id} tidak ada`);
       return;
     }
     this.data[index] = {
@@ -52,6 +53,7 @@ const menuMakanan = {
         const { nama } = this.data[index];
         this.data.splice(index, 1);
         penumbalan.push(nama);
+
       }
     });
     console.log(`${penumbalan} ✅ berhasil sudah dihapus`);
