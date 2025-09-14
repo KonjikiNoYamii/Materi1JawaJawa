@@ -97,7 +97,7 @@ menuMakanan.lihat();
 // 6. SPREAD: salin menu
 const menuBackup = menuMakanan.salinMenu(); // copy semua
 
-const menuPilihan = menuMakanan.salinMenu(1, 3); // copy ID 1 dan 3
+const menuPilihan = menuMakanan.salinMenu(1); // copy ID 1 dan 3
 
 console.log("Backup semua menu:", menuBackup);
 
