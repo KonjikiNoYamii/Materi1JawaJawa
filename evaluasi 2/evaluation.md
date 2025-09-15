@@ -1,0 +1,1 @@
+**Saya merasa pemahaman saya prematur walau memang saya cuma menyempatkan 1-2 jam perhari kecuali hari libur bisa lebih lama saya mengulang pelajaran sudah dipelajari menggunakan AI dan memang terkadang materinya terasa berbeda menurut pemahaman AI saya dengan pemahaman saya kepada materi yg diberikan Mentor.**
