@@ -1,0 +1,3 @@
+**Membuat sistem absen simpel**
+membuat sebuah object bernama absensi. saya membuat properi keys yang menampung saat menambahkan nama siswa di method addSiswa disaat user memasukan nama maka akan masuk ke addSisiswa lalu diiterasi dan dimasukan ke data yang menampung nama siswa.. data tertampung karena build function yaitu push dan setelah berhasil maka akan memunculkan log bahwa siswa telah ditambahkan.
+di cek kehadiran adalah fungsi bahwa siswa telah hadir yang mana akan mengambil value dari data penampung yg telah diisi oleh addSiswa di dalam forEach saya menggunakan destrucing yg mana data.nama dirubah menjadi item params nya forEach dan setelah di cek bahwa datanya ada maka akan memunculkan pesan data.nama hadir

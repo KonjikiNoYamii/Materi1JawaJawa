@@ -52,10 +52,7 @@ let itungDurasi = ambilDurasi.reduce((naw, nak) => naw + nak);
 let menitDurasi = itungDurasi / 60;
 let jamDurasi = menitDurasi / 60;
 console.log(
-  `total ${itungDurasi} detik, ${menitDurasi} menit atau ${jamDurasi.toFixed(
-    2
-  )} jam `
-);
+  `total ${itungDurasi} detik, ${menitDurasi} menit atau ${jamDurasi.toFixed(2)} jam `);
 
 // soal 7
 let suratQari = playlist.map(({ judul, qari }) => {
