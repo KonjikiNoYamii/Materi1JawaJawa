@@ -6,7 +6,7 @@ const absensi = {
         const nama = {
           nama: item
         };
-        this.data.push(nama);
+        this.data.push(nama); // input yang dimasukan akan dikirim ke data
         console.log(`✅ ${item} ditambahkan`); // tanda nama sudah ditambahkan
       }
     });
