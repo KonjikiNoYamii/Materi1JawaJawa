@@ -1,0 +1,1 @@
+export { absensi,siswa } from './catat.js'
