@@ -1,3 +1,4 @@
+
 let motor ={
     merk: "Yamaha",
     tahun:999,
@@ -20,3 +21,28 @@ let nyari = hewan.find((item) => item.nama === "Silica")
 let nyari2 = hewan.find((item) => item.hewan === "anjeng")
 console.log(nyari);
 console.log(nyari2);
+
+function mobil(merk,tahun) {
+    this.merk = merk;
+    this.tahun = tahun;
+}
+
+let mobil1 = new mobil("Forsche", 1950)
+
+console.log(mobil1.merk);
+console.log(mobil1.tahun);
+
+class Siswa{
+    constructor(nama){
+        this.nama = nama;
+    }
+
+    sapa(){
+        console.log("halo, aku " + this.nama);
+        
+    }
+}
+
+let siswa1 = new Siswa("Yami")
+siswa1.sapa()
+

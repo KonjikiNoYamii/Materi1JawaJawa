@@ -31,6 +31,5 @@ try {
 }
 console.log(rubahKeJson);
 
-fetch()
 
 
