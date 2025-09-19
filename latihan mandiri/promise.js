@@ -22,3 +22,5 @@ function menit(time) {
 menit(waktu).then((pesan)=>{
     console.log(pesan);
 })
+
+ 
