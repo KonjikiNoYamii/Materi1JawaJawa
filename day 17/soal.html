@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .highlight{
+        color: brown;
+        font-size: 100px;
+    }
+</style>
+<body>
+    <ul>
+        <li class="surat1"></li>
+        <li class="surat1"></li>
+        <li class="surat1"></li>
+        <li class="surat1"></li>
+        <li class="surat1"></li>
+    </ul>
+     <ul>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+     </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <p id="p1"></p>
+    <p class="paragraf"></p>
+    <p class="paragraf"></p>
+    <p class="paragraf"></p>
+    <img src="/image(1).png" alt="" id="foto">
+    <p class="teks"></p>
+    <p class="teks"></p>
+    <p class="teks"></p>
+    <p class="teks"></p>
+    <p id="tbate">Awal</p>
+    <p id="benkyou">Belajar DOM</p>
+    <div id="d1"></div>
+    <p id="hide">sembunyikan saya</p>
+    <p id="show">tampilkan saya</p>
+    <p class="warna"></p>
+    <p class="warna"></p>
+    <p class="warna"></p>
+    <div id="box"></div>
+    <a href="" id="link">Klik aku</a>
+    <p class="kapital">paragraf a</p>
+    <p class="kapital">paragraf b</p>
+    <p class="kapital">paragraf c</p>
+    <p id ="highlight">Judul lama</p>
+    <img src="" alt="" class="img">
+    <img src="" alt="" class="img">
+    <img src="" alt="" class="img">
+    <p id="hello">Hello</p>
+    <p id="surat"></p>
+    <script>
+        const p = document.getElementById("p1")
+        p.innerHTML = "Halo DOM!"
+        const teks = document.getElementsByClassName("paragraf")
+        for (const p of teks) {
+            p.style.color = "blue"
+            p.innerHTML = "paragraf biru"
+        }
+        const list = document.getElementsByTagName("li")
+        for (let i = 0; i < list.length; i++) {
+            list[i].innerHTML += " -  item"
+            
+        }
+        document.querySelector("#foto").src = "/WhatsApp Image 2025-08-27 at 21.16.35.jpeg"
+
+        const teks1 =document.querySelectorAll(".teks")
+        teks1.forEach((item,idx) => {
+            item.innerHTML = `Teks ke- ${idx + 1}`
+        });
+        const p1 = document.getElementById("tbate")
+        p1.innerHTML ="Akhir"
+        const p2 = document.getElementById("benkyou")
+        p2.innerHTML = "<strong>Belajar DOM</strong>"
+        const div1 = document.getElementById("d1")
+        div1.innerText = "Isi baru dari JS"
+        const hide = document.getElementById("hide")
+        hide.style.display = "none"
+        const show = document.getElementById("show")
+        show.style.display = "block"
+        const warna = document.querySelectorAll(".warna")
+        const arrWarna = ["red","green","blue"]
+        warna.forEach((item, idx) => {
+            item.innerHTML = `ini warna ke - ${idx + 1}`
+            item.style.color = arrWarna[idx]
+        });
+        const box = document.getElementById("box")
+        box.style.width = "200px"
+        box.style.backgroundColor = "yellow"
+        box.style.height = "200px"
+        const link = document.getElementById("link")
+        link.setAttribute("href", "https://google.com")
+        link.setAttribute("target", "_blank")
+        const kapital = document.querySelectorAll(".kapital")
+        kapital.forEach(item => {
+            item.innerText = item.innerText.toUpperCase()
+        });
+        const highlight = document.getElementById("highlight")
+        highlight.classList.add("highlight")
+        const item = document.querySelectorAll(".item")
+        const duaWarna = ["red","blue"]
+        for(let i = 0;i < item.length;i++){
+            if (i % 2 === 0) {
+                item[i].innerText = "ini warna merah"
+                item[i].style.color = duaWarna[0]
+            } else {
+                item[i].innerText ="ini warna biru"
+                item[i].style.color = duaWarna[1]
+            }
+        }
+        const img = document.querySelectorAll(".img")
+        img.forEach(item => {
+            item.setAttribute("src","/WhatsApp Image 2025-08-10 at 19.56.43.jpeg")
+        });
+        const hello = document.getElementById("hello")
+        hello.style.color = "white"
+        hello.style.backgroundColor = "black"
+        hello.style.fontSize = "30px"
+        const surat = document.getElementById("surat")
+        fetch("https://equran.id/api/v2/surat/1")
+        .then(item =>{
+            return item.json()
+        })
+        .then(item =>{
+            surat.innerText= item.data.namaLatin
+        })
+        const surat1 = document.querySelectorAll(".surat1")
+        fetch("https://equran.id/api/v2/surat")
+        .then(item =>{
+            return item.json()
+        })
+        .then(item =>{
+            item.data.forEach((item,idx)=>{
+                surat1[idx].innerHTML = item.namaLatin
+                
+            })
+        })
+    </script>
+</body>
+</html>

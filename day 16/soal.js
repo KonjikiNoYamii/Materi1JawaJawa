@@ -202,7 +202,8 @@
 
 // soal 13
 function succes1() {
-    return Promise.resolve("data 1") // diperbolehkan langsung menggunakn resolve ataupun reject jika memang sudah pasti memebri output apa
+         // tidak menggunakan new karena tidak membutuhkan delay
+    return Promise.resolve("data 1") // diperbolehkan langsung menggunakn resolve ataupun reject dan new karena memang sedang tidak membutuhkan setTImeout atau fetch
 }
 function succes2() {
     return Promise.resolve("data 2")

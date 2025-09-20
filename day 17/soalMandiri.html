@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1 id="judul"></h1>
+    <p id="pesan"></p>
+    <button onclick="ubah()" class="foto"><img src="" alt="" width="100px" height="150px" id="foto"></button>
+    <script>
+        document.body.style.backgroundColor = "yellow"
+        const p = document.getElementById("pesan")
+        const h =document.getElementById("judul")
+        p.innerHTML = "PAragraf awal"
+        h.innerHTML = "judul awal"
+        p.style.color = "black"
+        h.style.color = "black"
+        const gambar =document.getElementById("foto")
+        gambar.src = "/image(1).png"
+
+        let isBlack = false
+        function ubah() {
+
+            if (!isBlack) {
+                document.body.style.backgroundColor = "black"
+                gambar.src = "/WhatsApp Image 2025-08-10 at 19.56.43.jpeg"
+                p.style.color = "white"
+                p.innerHTML = "Paragraf telah dirubah"
+                h.style.color = "white"
+                h.innerHTML = "Judul telah dirubah"
+                isBlack = true
+            } else {
+                document.body.style.backgroundColor = "blue"
+                gambar.src = "/WhatsApp Image 2025-08-27 at 21.16.35.jpeg"
+                h.style.color = "black"
+                p.style.color = "black"
+                p.innerHTML = "paragraf telah berubah 2"
+                h.innerHTML = "judul telah berubah 2"
+                isBlack = false
+            }
+        }
+
+    </script>
+</body>
+</html>
