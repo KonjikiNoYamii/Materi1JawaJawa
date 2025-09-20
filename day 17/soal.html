@@ -62,53 +62,68 @@
     <p id="hello">Hello</p>
     <p id="surat"></p>
     <script>
+        // soal 1
         const p = document.getElementById("p1")
         p.innerHTML = "Halo DOM!"
+        // soal 2
         const teks = document.getElementsByClassName("paragraf")
         for (const p of teks) {
             p.style.color = "blue"
             p.innerHTML = "paragraf biru"
         }
+        // soal 3
         const list = document.getElementsByTagName("li")
         for (let i = 0; i < list.length; i++) {
             list[i].innerHTML += " -  item"
             
         }
+        // soal 4
         document.querySelector("#foto").src = "/WhatsApp Image 2025-08-27 at 21.16.35.jpeg"
-
+        //  soal 5
         const teks1 =document.querySelectorAll(".teks")
         teks1.forEach((item,idx) => {
             item.innerHTML = `Teks ke- ${idx + 1}`
         });
+        // soal 6
         const p1 = document.getElementById("tbate")
         p1.innerHTML ="Akhir"
+        // soal 7
         const p2 = document.getElementById("benkyou")
         p2.innerHTML = "<strong>Belajar DOM</strong>"
+        // soal 8
         const div1 = document.getElementById("d1")
         div1.innerText = "Isi baru dari JS"
+        // soal 9
         const hide = document.getElementById("hide")
         hide.style.display = "none"
+        // soal 10
         const show = document.getElementById("show")
         show.style.display = "block"
+        // soal 11
         const warna = document.querySelectorAll(".warna")
         const arrWarna = ["red","green","blue"]
         warna.forEach((item, idx) => {
             item.innerHTML = `ini warna ke - ${idx + 1}`
             item.style.color = arrWarna[idx]
         });
+        // soal 12
         const box = document.getElementById("box")
         box.style.width = "200px"
         box.style.backgroundColor = "yellow"
         box.style.height = "200px"
+        // soal 13
         const link = document.getElementById("link")
         link.setAttribute("href", "https://google.com")
         link.setAttribute("target", "_blank")
+        // soal 14
         const kapital = document.querySelectorAll(".kapital")
         kapital.forEach(item => {
             item.innerText = item.innerText.toUpperCase()
         });
+        // soal 15
         const highlight = document.getElementById("highlight")
         highlight.classList.add("highlight")
+        // soal 16
         const item = document.querySelectorAll(".item")
         const duaWarna = ["red","blue"]
         for(let i = 0;i < item.length;i++){
@@ -120,14 +135,17 @@
                 item[i].style.color = duaWarna[1]
             }
         }
+        // soal 17
         const img = document.querySelectorAll(".img")
         img.forEach(item => {
             item.setAttribute("src","/WhatsApp Image 2025-08-10 at 19.56.43.jpeg")
         });
+        // soal 18
         const hello = document.getElementById("hello")
         hello.style.color = "white"
         hello.style.backgroundColor = "black"
         hello.style.fontSize = "30px"
+        // soal 19
         const surat = document.getElementById("surat")
         fetch("https://equran.id/api/v2/surat/1")
         .then(item =>{
@@ -136,6 +154,7 @@
         .then(item =>{
             surat.innerText= item.data.namaLatin
         })
+        // soal 20
         const surat1 = document.querySelectorAll(".surat1")
         fetch("https://equran.id/api/v2/surat")
         .then(item =>{

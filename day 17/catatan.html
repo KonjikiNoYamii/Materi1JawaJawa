@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catatan DOM & Fetch</title>
+  <style>
+    .highlight {
+      color: brown;
+      font-size: 40px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Elemen-elemen latihan DOM -->
+  <p id="p1"></p>
+
+  <p class="paragraf"></p>
+  <p class="paragraf"></p>
+  <p class="paragraf"></p>
+
+  <ul>
+    <li class="surat1"></li>
+    <li class="surat1"></li>
+    <li class="surat1"></li>
+    <li class="surat1"></li>
+    <li class="surat1"></li>
+  </ul>
+
+  <ul>
+    <li class="item"></li>
+    <li class="item"></li>
+    <li class="item"></li>
+    <li class="item"></li>
+    <li class="item"></li>
+  </ul>
+
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <p id="tbate">Awal</p>
+  <p id="benkyou">Belajar DOM</p>
+  <div id="d1"></div>
+  <p id="hide">sembunyikan saya</p>
+  <p id="show">tampilkan saya</p>
+
+  <p class="warna"></p>
+  <p class="warna"></p>
+  <p class="warna"></p>
+
+  <div id="box"></div>
+  <a href="" id="link">Klik aku</a>
+
+  <p class="kapital">paragraf a</p>
+  <p class="kapital">paragraf b</p>
+  <p class="kapital">paragraf c</p>
+
+  <p id="highlight">Judul lama</p>
+
+  <img src="" alt="" class="img">
+  <img src="" alt="" class="img">
+  <img src="" alt="" class="img">
+
+  <p id="hello">Hello</p>
+  <p id="surat"></p>
+
+  <img src="/image(1).png" alt="" id="foto">
+  <p class="teks"></p>
+  <p class="teks"></p>
+  <p class="teks"></p>
+  <p class="teks"></p>
+
+  <!-- Script dengan catatan belajar -->
+  <script>
+    // =======================
+    // 📝 CATATAN & KODE LATIHAN DOM + FETCH
+    // =======================
+
+    // SOAL 1: ambil elemen <p id="p1"> dan isi dengan teks
+    const p = document.getElementById("p1")
+    p.innerHTML = "Halo DOM!" 
+    // 👉 innerHTML bisa menyisipkan tag HTML, sedangkan innerText hanya teks biasa.
+
+    // SOAL 2: ubah semua <p class="paragraf"> jadi biru
+    const teks = document.getElementsByClassName("paragraf")
+    for (const p of teks) {
+      p.style.color = "blue"
+      p.innerHTML = "paragraf biru"
+    }
+    // 👉 getElementsByClassName menghasilkan HTMLCollection, perlu loop (for...of).
+
+    // SOAL 3: isi semua <li> dengan tambahan teks
+    const list = document.getElementsByTagName("li")
+    for (let i = 0; i < list.length; i++) {
+      list[i].innerHTML += " - item"
+    }
+
+    // SOAL 4: ganti src gambar lewat querySelector
+    document.querySelector("#foto").src = "/WhatsApp Image 2025-08-27 at 21.16.35.jpeg"
+
+    // SOAL 5: looping dengan forEach + tampilkan teks
+    const teks1 = document.querySelectorAll(".teks")
+    teks1.forEach((item, idx) => {
+      item.innerHTML = `Teks ke- ${idx + 1}`
+    })
+
+    // SOAL 6: ubah isi teks id=tbate
+    const p1 = document.getElementById("tbate")
+    p1.innerHTML = "Akhir"
+
+    // SOAL 7: tambahkan HTML tebal
+    const p2 = document.getElementById("benkyou")
+    p2.innerHTML = "<strong>Belajar DOM</strong>"
+
+    // SOAL 8: isi teks div
+    const div1 = document.getElementById("d1")
+    div1.innerText = "Isi baru dari JS"
+
+    // SOAL 9: sembunyikan elemen
+    const hide = document.getElementById("hide")
+    hide.style.display = "none"
+
+    // SOAL 10: tampilkan elemen
+    const show = document.getElementById("show")
+    show.style.display = "block"
+
+    // SOAL 11: looping dengan warna array
+    const warna = document.querySelectorAll(".warna")
+    const arrWarna = ["red","green","blue"]
+    warna.forEach((item, idx) => {
+      item.innerHTML = `ini warna ke - ${idx + 1}`
+      item.style.color = arrWarna[idx]
+    })
+
+    // SOAL 12: styling div
+    const box = document.getElementById("box")
+    box.style.width = "200px"
+    box.style.height = "200px"
+    box.style.backgroundColor = "yellow"
+
+    // SOAL 13: ubah link
+    const link = document.getElementById("link")
+    link.setAttribute("href","https://google.com")
+    link.setAttribute("target","_blank")
+
+    // SOAL 14: kapital semua teks
+    const kapital = document.querySelectorAll(".kapital")
+    kapital.forEach(item => {
+      item.innerText = item.innerText.toUpperCase()
+    })
+
+    // SOAL 15: tambahkan class highlight
+    const highlight = document.getElementById("highlight")
+    highlight.classList.add("highlight")
+
+    // SOAL 16: warnai list ganjil-genap
+    const item = document.querySelectorAll(".item")
+    const duaWarna = ["red","blue"]
+    for (let i = 0; i < item.length; i++) {
+      if (i % 2 === 0) {
+        item[i].innerText = "ini warna merah"
+        item[i].style.color = duaWarna[0]
+      } else {
+        item[i].innerText = "ini warna biru"
+        item[i].style.color = duaWarna[1]
+      }
+    }
+
+    // SOAL 17: ganti semua src gambar
+    const img = document.querySelectorAll(".img")
+    img.forEach(item => {
+      item.setAttribute("src","/WhatsApp Image 2025-08-10 at 19.56.43.jpeg")
+    })
+
+    // SOAL 18: ubah style teks Hello
+    const hello = document.getElementById("hello")
+    hello.style.color = "white"
+    hello.style.backgroundColor = "black"
+    hello.style.fontSize = "30px"
+
+    // SOAL 19: fetch satu surat
+    const surat = document.getElementById("surat")
+    fetch("https://equran.id/api/v2/surat/1")
+      .then(item => item.json())
+      .then(item => {
+        surat.innerText = item.data.namaLatin
+      })
+
+    // SOAL 20a: fetch daftar surat → isi 5 li kosong
+    const surat1 = document.querySelectorAll(".surat1")
+    fetch("https://equran.id/api/v2/surat")
+      .then(item => item.json())
+      .then(item => {
+        item.data.slice(0, 5).forEach((surah, idx) => {
+          surat1[idx].innerHTML = surah.namaLatin
+        })
+      })
+
+    // SOAL 20b: versi alternatif → bikin <li> baru
+    const ul = document.createElement("ul")
+    document.body.appendChild(ul)
+    fetch("https://equran.id/api/v2/surat")
+      .then(res => res.json())
+      .then(data => {
+        data.data.slice(0,5).forEach(surah => {
+          const li = document.createElement("li")
+          li.innerText = surah.namaLatin
+          ul.appendChild(li)
+        })
+      })
+  </script>
+</body>
+</html>
