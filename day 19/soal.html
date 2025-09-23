@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sapa()">Click</button><br>
+    <img src="/image(1).png" alt="" onclick="ubahSrc(this)">
+    <p ondblclick="ubahP(this)">One clicked!</p>
+    <input type="text" onfocus="ubahPlaceHolder(this)">
+    <p onmousedown="mouseDown(this)" onmouseup="mouseUp(this)">Click</p><br>
+    <button id="btn">Click</button>
+    <p id="msg">belum berubah</p>
+    <div id="area" onmouseover="mouseOver()" onmouseout="mouseOut()">halo</div>
+    <input type="text" id="inputSpan"><br>
+    <span id="show"></span><br>
+    <button id="ilang">click</button>
+    <p id="timpa">klik</p>
+    <button id="klik">klik</button>
+    <button id="klik1">hilangkan perubahan</button>
+    <form action="" id="myform">
+        <label for="">
+            nama:
+            <input type="text" id="submit">
+        </label>
+        <button >submit</button>
+    </form>
+    <ul id="ul">
+        <li>jangan klik</li>
+        <img src="" alt="" id="print">
+    </ul>
+    <button id="wanklik">sekali klik</button>
+    <script>
+        // soal 1
+        function sapa() {
+            alert("Halo!")
+        }
+        // soal 2
+        function ubahSrc(img) {
+            img.src ="/WhatsApp Image 2025-08-10 at 19.56.43.jpeg"
+        }
+        // soal 3
+        function ubahP(p) {
+            p.innerText ="Double clicked!"
+        }
+        // soal 4
+        function ubahPlaceHolder(plc) {
+            plc.placeholder ="Tulis disini"
+        }
+        // soal 5
+        function mouseDown(D) {
+            D.innerText ="Mouse Down"
+            D.style.color = "blue"     
+        }
+        function mouseUp(U) {
+            U.innerText ="Mouse Up"
+            U.style.color ="red"
+        }
+        // soal 6
+        const btn = document.getElementById("btn")
+        btn.onclick = function () {
+            const msg = document.getElementById("msg")
+            msg.innerText ="Sudah berubah"
+            msg.style.backgroundColor ="yellow"
+            msg.style.color = "brown"
+        }
+        // soal 7
+        const area = document.getElementById("area")
+        function mouseOver() {
+            area.style.backgroundColor = "black"
+            area.style.color ="white"
+        }
+        function mouseOut() {
+            area.style.backgroundColor ="red"
+        }
+        // soal 8
+        const show = document.getElementById("show")
+        const inputSpan = document.getElementById("inputSpan")
+        inputSpan.oninput = function () {
+            show.innerText = this.value
+        }
+        // soal 9
+        const ilang = document.getElementById("ilang")
+        ilang.onclick = function () {
+            this.disabled = true
+        }
+        // soal 10
+        const timpa = document.getElementById("timpa") // karena eksekusi kode dijalankan dari yg terbawah dulu
+                                                       // yaitu dari kiri ke kanan dan atas kebawah.. oleh karena itu alert 1 tidak muncul karena sudah ditimpa oleh alert 2
+        timpa.onclick = function () {
+            alert("1")
+        }
+        timpa.onclick = function () {
+            alert("2")
+        }
+        // soal 11
+        const klik = document.getElementById("klik")
+        klik.addEventListener("click", ubahWarna)
+        klik.addEventListener("click", konsol)
+
+        function ubahWarna() {
+            this.style.color ="red"
+        }
+
+        function konsol() {
+            console.log("warna sudah berubah");
+            
+        }
+        // soal 12
+        const klik1 = document.getElementById("klik1")
+        klik1.addEventListener("click", function () {
+            klik1.removeEventListener("click", ubahWarna)
+            console.log("sudah dihapus");
+            
+        })
+        
+
+        // soal 13
+        const myform = document.getElementById("myform")
+        const submit = document.getElementById("submit")
+        myform.addEventListener('submit', function (send) {
+            send.preventDefault()
+            console.log("nama yg dimasukan", submit.value);
+            
+        })
+        // soal 14
+        const ul = document.getElementById("ul")
+        const print = document.getElementById("print")
+        ul.addEventListener("click", function (c) {
+            if (c.target.tagName === "LI") {
+                c.target.innerText ="mas e malah pencet pencet"
+                print.src = "/6ea002da-3b4c-49f2-a0b6-89d76dab199e.jpeg"
+            }
+        })
+        // soal 15
+        const wanklik = document.getElementById("wanklik")
+        wanklik.addEventListener("click", function (params) {
+            alert("Mou ichido dake")
+        }, {once: true})
+    </script>
+</body>
+</html>
