@@ -135,14 +135,14 @@
     </form>
     <!-- soal 25-->
     <h1>Register</h1>
-    <form id="login">
-      nama: <input type="text" id="username" /><br />
+    <form id="loginn">
+      nama: <input type="text" id="usernamee" /><br />
 
-      email: <input type="text" id="email" /><br />
+      email: <input type="text" id="emaill" /><br />
 
-      password: <input type="password" id="password" /><br />
+      password: <input type="password" id="passwordd" /><br />
       <button type="submit">Login</button>
-      <p id="succes"></p>
+      <p id="succes10"></p>
     </form>
     <script>
       const login1 = document.getElementById("login1");
@@ -324,24 +324,24 @@
           succes9.style.color = "red";
         }
       });
-      const login = document.getElementById("login");
-      login.addEventListener("submit", function (e) {
+      const loginn = document.getElementById("loginn");
+      loginn.addEventListener("submit", function (e) {
         e.preventDefault();
-        const username = document.getElementById("username").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
-        const succes = document.getElementById("succes");
+        const usernamee = document.getElementById("usernamee").value.trim();
+        const emaill = document.getElementById("emaill").value.trim();
+        const passwordd = document.getElementById("passwordd").value;
+        const succes10 = document.getElementById("succes10");
 
-        if (username === "" || email === "" || password === "") {
-          succes.innerText = "Isi kolom form!!";
-          succes.style.color = "red";
-        } else if (!email.includes("@") && !email.includes(".com")) {
+        if (usernamee === "" || emaill === "" || passwordd === "") {
+          succes10.innerText = "Isi kolom form!!";
+          succes10.style.color = "red";
+        } else if (!emaill.includes("@") && !emaill.includes(".com")) {
           alert("Masukan email dengan benar");
-        } else if (password.length < 6) {
+        } else if (passwordd.length < 6) {
           alert("password minimmal 6 character!!");
         } else {
-          succes.style.color = "green";
-          succes.innerText = "Registrasi berhasil";
+          succes10.style.color = "green";
+          succes10.innerText = "Registrasi berhasil";
         }
       });
     </script>
