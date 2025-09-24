@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #login {
+            display: grid;
+            align-items: center;
+            padding: 20px 40%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Register</h1>
+    <form id="login">
+        nama: <input type="text" id="username"><br>
+
+        email: <input type="text" id="email" ><br>
+
+        password: <input type="password" id="password"><br>
+        <button type="submit">Login</button>
+        <p id="succes"></p>
+    </form>
+    <script>
+        const login = document.getElementById("login")
+        login.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value.trim()
+            const email = document.getElementById("email").value.trim()
+            const password = document.getElementById("password").value
+            const succes = document.getElementById("succes")
+
+            if (username === "" || email === "" || password === "") {
+                succes.innerText ="Isi kolom form!!"
+                succes.style.color = "red"
+            }else if (!email.includes("@")){
+                alert("Masukan email dengan benar")
+            }else if (password.length < 6){
+                alert("password minimmal 6 character!!")
+            }else{
+                succes.style.color ="green"
+                succes.innerText = "Registrasi berhasil"
+            }
+        })
+    </script>
+</body>
+</html>

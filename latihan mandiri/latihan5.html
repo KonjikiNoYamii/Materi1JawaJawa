@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="judul"></h1>
+    <h1 id="judul"></h1><br>
+
+    <button id="button">Klik</button>
+    <div id="user"></div>
     <script>
         const judul = document.getElementById("judul")
         judul.innerText ="Belajar JSON & Async di JavaScript"
         judul.style.color = "blue"
+
+        const button = document.getElementById("button") // buat variabel penampung Id 
+        const user = document.getElementById("user")
+        // button yg diambil karena pemicu event
+        button.addEventListener("click", function () { // function tanpa nama karena membutuhkian wadahnya untuk proses data API
+            fetch("https://jsonplaceholder.typicode.com/users/1") // tidak perlu dibumgkus variabel kareana akan langsung di proses oleh .then(mungkin)
+            .then(res =>{
+               return res.json() // wajib return json
+            })
+            .then(data =>{
+                // user yg dipanggil karena dia tempat penampung wadah API
+                user.innerHTML = `nama:${data.name} <br> Email:${data.email}`
+            })
+        })
     </script>
 </body>
 </html>

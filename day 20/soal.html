@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        max-width: 70%;
+      }
+      form {
+        display: grid;
+        max-width: 70%;
+        gap: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- soal 1-->
+    nama: <input type="text" required /><br />
+    <!-- soal 2-->
+    usia: <input type="number" min="18" max="60" /><br />
+    <!-- soal 3-->
+    password: <input type="password" minlength="8" /><br />
+    <!-- soal 4-->
+    email: <input type="email" /><br />
+    <!-- soal 5-->
+    No.Telp: <input pattern="[0-9]{10,12}" /><br />
+    <!-- soal 6-->
+    username: <input pattern="[a-z]+" /><br />
+    <!-- soal 7-->
+    kode pos: <input type="number" pattern="[0-9]{5}" /><br />
+    <!-- soal 8-->
+    tanggal lahir: <input type="number" max="2019-12-31" /><br />
+    <!-- soal 9-->
+    url: <input type="url" /><br />
+    <!-- soal 10-->
+    angka genap: <input type="number" pattern="(0|2|4|6|8)$" /><br />
+    <!-- soal 11-->
+    <form id="login1">
+      masukan nama: <input type="text" id="name" /><br />
+      <button type="submit">submit</button><br />
+      <p id="succes"></p>
+    </form>
+    <!-- soal 12-->
+    <form id="login2">
+      masukan usia: <input type="number" id="age" /><br />
+      <button type="submit">submit</button><br />
+      <p id="succes1"></p>
+    </form>
+    <!-- soal 13-->
+    <form id="login3">
+      masukan password: <input type="password" id="password" /><br />
+      <button type="submit">submit</button><br />
+      <p id="succes2"></p>
+    </form>
+    <!-- soal 14-->
+    <form>
+      masukan email:<input type="email" pattern="/^[\w.-]+@[\w.-]+\.\w{2,}$/" />
+      <button type="submit">submit</button>
+    </form>
+    <!-- soal 15-->
+    <form id="login4">
+      masukan no HP:<input type="text" id="noHP" />
+      <button type="submit">submit</button>
+      <p id="succes3"></p>
+    </form>
+    <!-- soal 16-->
+    <form id="login5">
+      masukan password: <input type="password" id="password1" /><br />
+      confirm : <input type="password" id="password2" />
+      <button type="submit">submit</button><br />
+      <p id="succes4"></p>
+    </form>
+    <!-- soal 17-->
+    <form id="formTanggal">
+      masukan tanggal: <input type="date" id="tanggal" />
+      <button type="submit">submit</button>
+      <p id="succes5"></p>
+    </form>
+    <!-- soal 18-->
+    <form>
+      username: <input type="text" pattern="[a-zA-Z0-9]{5,}" />
+      <button type="submit">submit</button>
+    </form>
+    <!-- soal 19-->
+    <form id="formLogin">
+      username: <input type="text" id="username" /> password:
+      <input type="password" id="pass" />
+      <button type="submit">submit</button>
+      <p id="warn"></p>
+    </form>
+    <!-- soal 20-->
+    <form id="formCheck">
+      apakah anda beriman?: <input type="checkbox" id="check" />
+      <button type="submit" id="btn">submit</button>
+      <p id="succes6"></p>
+    </form>
+    <!-- soal 21-->
+    <form id="formAngka">
+      masukan angka: <input type="number" id="inputAngka" />
+      <button type="submit">submit</button>
+      <p id="succes7"></p>
+    </form>
+    <!-- soal 22-->
+    <form id="formArea">
+      karakter tidak boleh lebih dari 200<textarea
+        name="maksimal 200 character"
+        id="textArea"
+        placeholder="maksimal 200 karakter"
+      ></textarea>
+      <button type="submit">submit</button>
+      <p id="succes8"></p>
+    </form>
+    <!-- soal 23-->
+    <form id="formSelect">
+      <label for="jurusan">Pilih jurusan:</label>
+      <select id="jurusan">
+        <option value="">-- Pilih jurusan --</option>
+        <option value="rpl">Rekayasa Perangkat Lunak</option>
+        <option value="tkj">Teknik Komputer & Jaringan</option>
+        <option value="mm">Multimedia</option>
+      </select>
+      <button type="submit">Submit</button>
+      <p id="pesan"></p>
+    </form>
+    <!-- soal 24-->
+    <form id="formFile">
+      upload kesini <input type="file" id="inputfile" />
+      foto anda:
+      <img src="" alt="" id="foto" />
+      <button id="submit">submit</button>
+      <p id="succes9"></p>
+    </form>
+    <!-- soal 25-->
+    <h1>Register</h1>
+    <form id="login">
+      nama: <input type="text" id="username" /><br />
+
+      email: <input type="text" id="email" /><br />
+
+      password: <input type="password" id="password" /><br />
+      <button type="submit">Login</button>
+      <p id="succes"></p>
+    </form>
+    <script>
+      const login1 = document.getElementById("login1");
+      login1.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const succes = document.getElementById("succes");
+        if (name === "") {
+          alert("nama tidak boleh kosong!!!!");
+        } else {
+          succes.innerText = "submit berhasil";
+          succes.style.color = "green";
+        }
+      });
+
+      const login2 = document.getElementById("login2");
+      login2.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const age = document.getElementById("age").value.trim();
+        const succes = document.getElementById("succes1");
+        if (age < 18) {
+          alert("anda belum cukup umur!!");
+        } else {
+          succes1.innerText = "submit berhasil";
+          succes1.style.color = "green";
+        }
+      });
+      const login3 = document.getElementById("login3");
+      login3.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const password = document.getElementById("password").value.trim();
+        const succes2 = document.getElementById("succes2");
+        if (password.length < 8) {
+          alert("password harus lebih dari 8!!!");
+        } else {
+          succes2.innerText = "submit berhasil";
+          succes2.style.color = "green";
+        }
+      });
+      const login4 = document.getElementById("login4");
+      login4.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const noHP = document.getElementById("noHP").value.trim();
+        const succes3 = document.getElementById("succes3");
+        if (isNaN(noHP)) {
+          alert("nomor harus angka!");
+        } else {
+          succes3.innerText = "submit berhasil";
+          succes3.style.color = "green";
+        }
+      });
+      const login5 = document.getElementById("login5");
+      login5.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const password1 = document.getElementById("password1").value.trim();
+        const password2 = document.getElementById("password2").value.trim();
+        const succes4 = document.getElementById("succes4");
+        if (password1 !== password2) {
+          alert("password tidak sama!!");
+        } else {
+          succes4.innerText = "submit berhasil";
+          succes4.style.color = "green";
+        }
+      });
+      const formTanggal = document.getElementById("formTanggal");
+      formTanggal.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const tanggal = document.getElementById("tanggal").value;
+        const succes5 = document.getElementById("succes5");
+
+        if (!tanggal) {
+          alert("tanggal harus diisi");
+        }
+        const inputDate = new Date(tanggal);
+        const today = new Date();
+
+        if (inputDate > today) {
+          alert("tanggal tidak boelh lebih dari harin ini");
+        } else {
+          succes5.style.color = "green";
+          succes5.innerText = "submit berhasil";
+        }
+      });
+      const formLogin = document.getElementById("formLogin");
+      formLogin.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const username = document.getElementById("username");
+        const pass = document.getElementById("pass");
+        const warn = document.getElementById("warn");
+        if (!username || !pass) {
+          warn.innerText = "Isi semua field!";
+          warn.style.color = "red";
+        } else {
+          warn.style.color = "green";
+          warn.innerText = "berhasil";
+        }
+      });
+      const formCheck = document.getElementById("formCheck");
+      formCheck.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const check = document.getElementById("check");
+        const btn = document.getElementById("btn");
+        const succes6 = document.getElementById("succes6");
+
+        if (!check.checked) {
+          succes6.style.color = "red";
+          succes6.innerText = "*anda tidak beriman";
+          btn.disabled = true;
+        } else {
+          succes6.innerText = "Alhamdillah anda beriman";
+          succes6.style.color = "green";
+        }
+      });
+      const formAngka = document.getElementById("formAngka");
+      formAngka.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const inputAngka = document.getElementById("inputAngka").value.trim();
+        const succes7 = document.getElementById("succes7");
+
+        if (inputAngka % 2 !== 0) {
+          succes7.innerText = "Angka harus genap!";
+          succes7.style.color = "red";
+        } else {
+          succes7.innerText = "berhasil";
+          succes7.style.color = "green";
+        }
+      });
+      const formArea = document.getElementById("formArea");
+      formArea.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const textArea = document.getElementById("textArea").value.trim();
+        const succes8 = document.getElementById("succes8");
+
+        if (textArea.length > 200) {
+          succes8.innerText = "tidak boleh lebih dari 200 karakter!!";
+          succes8.style.color = "red";
+        } else {
+          succes8.innerText = "berhasil";
+          succes8.style.color = "green";
+        }
+      });
+      const formSelect = document.getElementById("formSelect");
+      const jurusan = document.getElementById("jurusan");
+      const pesan = document.getElementById("pesan");
+
+      formSelect.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (jurusan.value === "") {
+          pesan.textContent = "Anda harus memilih jurusan!";
+          pesan.style.color = "red";
+        } else {
+          pesan.innerText = "Berhasil";
+          pesan.style.color = "green";
+        }
+      });
+      const formFile = document.getElementById("formFile");
+      formFile.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const inputfile = document.getElementById("inputfile");
+        const file = inputfile.files[0];
+        const filename = file.name.toLowerCase();
+        const succes9 = document.getElementById("succes9");
+        const foto = document.getElementById("foto");
+
+        if (
+          filename.endsWith(".jpg") ||
+          filename.endsWith(".png") ||
+          filename.endsWith(".jpeg")
+        ) {
+          foto.style.width = "200px";
+          foto.style.height = "200px";
+          succes9.innerText = "berhasil";
+          succes9.style.color = "green";
+          foto.src = URL.createObjectURL(file);
+        } else {
+          succes9.innerText = "tolong masukan file tipe jpg atau png";
+          succes9.style.color = "red";
+        }
+      });
+      const login = document.getElementById("login");
+      login.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const succes = document.getElementById("succes");
+
+        if (username === "" || email === "" || password === "") {
+          succes.innerText = "Isi kolom form!!";
+          succes.style.color = "red";
+        } else if (!email.includes("@") && !email.includes(".com")) {
+          alert("Masukan email dengan benar");
+        } else if (password.length < 6) {
+          alert("password minimmal 6 character!!");
+        } else {
+          succes.style.color = "green";
+          succes.innerText = "Registrasi berhasil";
+        }
+      });
+    </script>
+  </body>
+</html>

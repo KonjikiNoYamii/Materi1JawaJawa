@@ -1,0 +1,6 @@
+- logika validasi (logika if else yg masih sering pusing dan tidak jarang dipakai pada berbagai kombinasi)
+- looping DOM (sedikit paham)
+- proses data fetch then (sering lupa)
+- destructuring object (sekedar paham alur)
+- build in function by javascript (belum maksimal)
+- 
