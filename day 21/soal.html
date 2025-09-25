@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Latihan LocalStorage</title>
+  <style>
+    body {
+      display: grid;
+      gap: 20px;
+      padding: 20px;
+    }
+    form {
+      display: grid;
+      gap: 5px;
+      width: 300px;
+    }
+    #tema, #tema1 {
+      width: 400px;
+      height: 400px;
+      border: purple solid 1px;
+      display: grid;
+      place-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Soal 1: Simpan username -->
+  <form id="formUser">
+    Masukkan username: <input type="text" id="username" />
+    <button type="submit">Submit</button>
+    <p id="warn"></p>
+  </form>
+
+  <!-- Soal 2: Simpan username dan tampilkan -->
+  <form id="formUser1">
+    Masukkan username: <input type="text" id="username1" />
+    <button type="submit">Submit</button>
+    <p id="warn1"></p>
+  </form>
+
+  <!-- Soal 3: Form login sederhana -->
+  <form id="formLogin">
+    Masukkan nama: <input type="text" id="userLogin" /> 
+    Masukkan password: <input type="password" id="passLogin" />
+    <button type="submit">Login</button>
+    <p id="warnLogin"></p>
+  </form>
+
+  <!-- Soal 4: Form login tambahan -->
+  <form id="formLogin1">
+    Masukkan nama: <input type="text" id="userLogin1" /> 
+    Masukkan password: <input type="password" id="passLogin1" />
+    <button type="submit">Login</button>
+    <p id="warnLogin1"></p>
+  </form>
+  <button id="rm">Logout</button>
+
+  <!-- Soal 5: Counter -->
+  <p id="count">0</p>
+  <button id="tambah">Tambah</button>
+
+  <!-- Soal 6: Pilihan tema -->
+  <div id="tema">
+    <button id="light">Light</button>
+    <button id="dark">Dark</button>
+  </div>
+
+  <!-- Soal 7: Pilihan tema kedua -->
+  <div id="tema1">
+    <button id="light1">Light</button>
+    <button id="dark1">Dark</button>
+  </div>
+
+  <!-- Soal 8: Daftar belanja 1 -->
+  <input type="text" id="inputBarang" />
+  <button id="btn">Simpan</button>
+  <p id="warn3"></p>
+
+  <!-- Soal 9: Daftar belanja 2 -->
+  <input type="text" id="inputBarang1" />
+  <button id="btn1">Simpan</button>
+  <p id="warn4"></p>
+  <p id="list"></p>
+
+  <!-- Soal 10: Clear All -->
+  <button id="hapus">Hapus Semua</button>
+
+  <!-- Soal 11: Form Biodata -->
+  <form id="formBiodata">
+    <label>Nama: <input type="text" id="nama" /></label>
+    <label>Umur: <input type="number" id="umur" /></label>
+    <label>Email: <input type="email" id="email" /></label>
+    <button type="submit">Simpan Biodata</button>
+    <p id="warnBiodata"></p>
+  </form>
+
+  <!-- Soal 13: Form username unik -->
+  <form id="formUser2">
+    Masukkan username: <input type="text" id="username2" />
+    <button type="submit">Submit</button>
+    <p id="warn5"></p>
+  </form>
+
+  <!-- Soal 14: Ganti Username -->
+  <form id="formGantiUsername">
+    Masukkan username baru: <input type="text" id="newUsername" />
+    <button type="submit">Ganti Username</button>
+    <p id="warnGanti"></p>
+  </form>
+
+  <!-- Soal 15: Remember Me login -->
+  <form id="formLoginRemember">
+    Username: <input type="text" id="loginUsername" /> 
+    Password: <input type="password" id="loginPassword" />
+    <label>
+      <input type="checkbox" id="rememberMe" /> Remember Me
+    </label>
+    <button type="submit">Login</button>
+    <p id="warnLoginRemember"></p>
+  </form>
+
+  <script>
+    // ====== Soal 1 ======
+    const formUser = document.getElementById("formUser");
+    formUser.addEventListener("submit", function(e){
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const warn = document.getElementById("warn");
+      localStorage.setItem("user", username);
+      warn.innerText = "Berhasil!";
+      warn.style.color = "green";
+    });
+
+    // ====== Soal 2 ======
+    const formUser1 = document.getElementById("formUser1");
+    formUser1.addEventListener("submit", function(e){
+      e.preventDefault();
+      const username1 = document.getElementById("username1").value.trim();
+      const warn1 = document.getElementById("warn1");
+      localStorage.setItem("user1", username1);
+      warn1.innerText = `Halo ${username1}`;
+      warn1.style.color = "green";
+    });
+
+    // ====== Soal 3 ======
+    const formLogin = document.getElementById("formLogin");
+    formLogin.addEventListener("submit", function(e){
+      e.preventDefault();
+      const userLogin = document.getElementById("userLogin").value.trim();
+      const passLogin = document.getElementById("passLogin").value.trim();
+      const warnLogin = document.getElementById("warnLogin");
+      localStorage.setItem("UsernameLogin", userLogin);
+      localStorage.setItem("passwordLogin", passLogin);
+      warnLogin.innerText = "Berhasil!";
+      warnLogin.style.color = "green";
+    });
+
+    // ====== Soal 4 ======
+    const formLogin1 = document.getElementById("formLogin1");
+    const warnLogin1 = document.getElementById("warnLogin1");
+    formLogin1.addEventListener("submit", function(e){
+      e.preventDefault();
+      const userLogin1 = document.getElementById("userLogin1").value.trim();
+      const passLogin1 = document.getElementById("passLogin1").value.trim();
+      localStorage.setItem("UsernameLogin1", userLogin1);
+      localStorage.setItem("passwordLogin1", passLogin1);
+      warnLogin1.innerText = "Berhasil!";
+      warnLogin1.style.color = "green";
+    });
+
+    const rm = document.getElementById("rm");
+    rm.addEventListener("click", function(){
+      localStorage.removeItem("UsernameLogin1");
+      localStorage.removeItem("passwordLogin1");
+      warnLogin1.innerText = "Anda telah logout";
+      warnLogin1.style.color = "green";
+    });
+
+    // ====== Soal 5 ======
+    const count = document.getElementById("count");
+    let angka = parseInt(localStorage.getItem("count")) || 0;
+    count.innerText = angka;
+
+    const tambah = document.getElementById("tambah");
+    tambah.addEventListener("click", function(e){
+      e.preventDefault();
+      angka++;
+      count.innerText = angka;
+      localStorage.setItem("count", angka);
+    });
+
+    // ====== Soal 6 ======
+    const dark = document.getElementById("dark");
+    const light = document.getElementById("light");
+    const tema = document.getElementById("tema");
+
+    dark.addEventListener("click", function(){
+      tema.style.backgroundColor = "black";
+      localStorage.setItem("theme", "dark");
+    });
+    light.addEventListener("click", function(){
+      tema.style.backgroundColor = "white";
+      localStorage.setItem("theme", "light");
+    });
+
+    // ====== Soal 7 ======
+    const dark1 = document.getElementById("dark1");
+    const light1 = document.getElementById("light1");
+    const tema1 = document.getElementById("tema1");
+
+    dark1.addEventListener("click", function(){
+      tema1.style.backgroundColor = "black";
+      localStorage.setItem("theme1", "dark");
+    });
+    light1.addEventListener("click", function(){
+      tema1.style.backgroundColor = "white";
+      localStorage.setItem("theme1", "light");
+    });
+
+    const savedTheme1 = localStorage.getItem("theme1");
+    if(savedTheme1 === "dark") tema1.style.backgroundColor = "black";
+    else tema1.style.backgroundColor = "white";
+
+    // ====== Soal 8 & 9: Daftar Belanja ======
+    const btn = document.getElementById("btn");
+    const warn3 = document.getElementById("warn3");
+
+    btn.addEventListener("click", function(e){
+      e.preventDefault();
+      const inputBarang = document.getElementById("inputBarang").value.trim();
+      if(inputBarang){
+        localStorage.setItem("barang", inputBarang);
+        warn3.innerText = "Barang berhasil disimpan!";
+        warn3.style.color = "green";
+      } else {
+        warn3.innerText = "Input jangan kosong!";
+        warn3.style.color = "red";
+      }
+    });
+
+    const btn1 = document.getElementById("btn1");
+    const warn4 = document.getElementById("warn4");
+    let barang1 = JSON.parse(localStorage.getItem("barang1")) || [];
+
+    btn1.addEventListener("click", function(e){
+      e.preventDefault();
+      const inputBarang1 = document.getElementById("inputBarang1").value.trim();
+      if(inputBarang1){
+        barang1.push(inputBarang1);
+        localStorage.setItem("barang1", JSON.stringify(barang1));
+        warn4.innerText = "Barang berhasil disimpan!";
+        warn4.style.color = "green";
+      } else {
+        warn4.innerText = "Input jangan kosong!";
+        warn4.style.color = "red";
+      }
+    });
+
+    // Tampilkan daftar belanja
+    const list = document.getElementById("list");
+    const barangList = JSON.parse(localStorage.getItem("barang1")) || [];
+    if(barangList.length > 0){
+      list.innerHTML = barangList.map((item, i)=> `${i+1}. ${item}`).join('<br>');
+    } else {
+      list.innerText = "Belum ada barang tersimpan.";
+    }
+
+    // ====== Soal 10: Clear All ======
+    const hapus = document.getElementById("hapus");
+    hapus.addEventListener("click", function(e){
+      e.preventDefault();
+      localStorage.clear();
+      alert("Semua data telah dihapus!");
+    });
+
+    // ====== Soal 11: Form Biodata ======
+    const formBiodata = document.getElementById("formBiodata");
+    const warnBiodata = document.getElementById("warnBiodata");
+    formBiodata.addEventListener("submit", function(e){
+      e.preventDefault();
+      const nama = document.getElementById("nama").value.trim();
+      const umur = document.getElementById("umur").value.trim();
+      const email = document.getElementById("email").value.trim();
+
+      if(!nama || !umur || !email){
+        warnBiodata.innerText = "Semua field harus diisi!";
+        warnBiodata.style.color = "red";
+        return;
+      }
+
+      localStorage.setItem("nama", nama);
+      localStorage.setItem("umur", umur);
+      localStorage.setItem("email", email);
+
+      warnBiodata.innerText = "Biodata berhasil disimpan!";
+      warnBiodata.style.color = "green";
+    });
+
+    // ====== Soal 13: Username unik ======
+    const formUser2 = document.getElementById("formUser2");
+    const warn5 = document.getElementById("warn5");
+    formUser2.addEventListener("submit", function(e){
+      e.preventDefault();
+      const username2 = document.getElementById("username2").value.trim();
+      if(!username2){
+        warn5.innerText = "Username tidak boleh kosong!";
+        warn5.style.color = "red";
+        return;
+      }
+      if(localStorage.getItem("username")){
+        warn5.innerText = "Username sudah ada, pakai yang lain!";
+        warn5.style.color = "red";
+      } else {
+        localStorage.setItem("username", username2);
+        warn5.innerText = "Username berhasil disimpan!";
+        warn5.style.color = "green";
+      }
+    });
+
+    // ====== Soal 14: Ganti Username ======
+    const formGantiUsername = document.getElementById("formGantiUsername");
+    const warnGanti = document.getElementById("warnGanti");
+    formGantiUsername.addEventListener("submit", function(e){
+      e.preventDefault();
+      const newUsername = document.getElementById("newUsername").value.trim();
+      if(!newUsername){
+        warnGanti.innerText = "Username baru tidak boleh kosong!";
+        warnGanti.style.color = "red";
+        return;
+      }
+      localStorage.setItem("username", newUsername);
+      warnGanti.innerText = "Username berhasil diganti!";
+      warnGanti.style.color = "green";
+    });
+
+    // ====== Soal 15: Remember Me ======
+    const formLoginRemember = document.getElementById("formLoginRemember");
+    const warnLoginRemember = document.getElementById("warnLoginRemember");
+    formLoginRemember.addEventListener("submit", function(e){
+      e.preventDefault();
+      const username = document.getElementById("loginUsername").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
+      const rememberMe = document.getElementById("rememberMe").checked;
+
+      if(!username || !password){
+        warnLoginRemember.innerText = "Username dan password harus diisi!";
+        warnLoginRemember.style.color = "red";
+        return;
+      }
+
+      if(rememberMe){
+        localStorage.setItem("rememberedUsername", username);
+      } else {
+        localStorage.removeItem("rememberedUsername");
+      }
+
+      warnLoginRemember.innerText = "Login berhasil!";
+      warnLoginRemember.style.color = "green";
+    });
+  </script>
+</body>
+</html>

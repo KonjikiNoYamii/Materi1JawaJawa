@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body{
+        display: grid;
+    }
+    form{
+        display: grid;
+        padding-left: 470px;
+        border-radius: 20px;
+        gap: 15px 10px;
+        max-width: 50%;
+    }
+    h1{
+        padding-left: 870px;
+    }
+  </style>
+  <body>
+    <h1>Register</h1>
+    <form id="register">
+      <label for="username">username</label>
+      <input type="text" name="username" id="username" />
+      <label for="password">password</label>
+      <input type="password" id="password" />
+      <button type="submit">register</button>
+      <p id="warn"></p>
+    </form>
+    <script>
+        const register = document.getElementById("register");
+        const warn = document.getElementById("warn");
+      register.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const username = document.getElementById("username").value.trim(); // value yg disimpan harus berada dalam scope addEventListener
+        const password = document.getElementById("password").value.trim();
+        const usernameExist = localStorage.getItem("user")
+        localStorage.setItem("user", username); // bagian "user" adalah key dan bagian username adalah value yg mana nanti dinput
+        localStorage.setItem("passUser", password);
+        if (username === ""|| password === "") {
+            warn.innerText ="*isi semua kolom!!"
+            warn.style.color = "red"
+        }else if(password.length < 6){
+            warn.style.color = "red"
+            warn.innerText = "password harus lebih dari 6 karakter!"
+        }else if(usernameExist && usernameExist === username){
+            warn.innerText ="username sudah dipakai!"
+            warn.style.color ="red"
+        }
+        else {
+        console.log("Data telah disimpan");
+        alert("Register berhasil!");
+        warn.innerText = "*tersimpan";
+        warn.style.color = "green";
+        }
+      });
+      const userTersimpan = localStorage.getItem("user"); // mengambil key "user" yg ada pada localstorage dan digunakan untuk menyapa user.. tidak dalam scope karena sapaan hanya akan aktif jika kita submit telebih dahulu
+      const passUserTersimpan = localStorage.getItem("passUser");
+      if (userTersimpan && passUserTersimpan) { // mengecek true false/ ada isi atau tidak
+        alert(`selamat datang kembali ${userTersimpan}!!`);
+        warn.style.color = "green";
+        warn.innerText = "*login berhasil";
+      }
+    </script>
+  </body>
+</html>
